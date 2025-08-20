@@ -1,28 +1,17 @@
 import Image from "next/image";
 import Heading from "../../components/Heading";
 import SearchForm from "../../components/SearchForm";
-import StartupCard from "@/components/StartupCard";
-import { client } from "@/sanity/lib/client";
+import StartupCard, { StartupCardType } from "@/components/StartupCard";
 import { STARTUPS_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
 
 
 export default async function Home({ searchParams }: { searchParams : Promise<{query?: string}>}) {
   
-
-
-    // {_createdAt: new Date(),
-    // views: 55,
-    // aurthor: { _id: 1, name: "Muhammad Ahmed"},
-    // post_id:1,
-    // description: "This is a description",
-    // image: "https://static1.srcdn.com/wordpress/wp-content/uploads/2024/03/walle-eve-from-wall-e.jpg?q=50&fit=crop&w=943&h=530&dpr=1.5",
-    // category: "Robots",
-    // title: "We Robots",
-
-    // }]
   const query = (await searchParams).query
-  const posts = await client.fetch(STARTUPS_QUERY);
+  const params = { search: query || null  }
+  const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params })
 
   return (<>
     <section className='bg-[#EE2B69] flex flex-col justify-center items-center w-full py-12 px-3 pattern'>
@@ -32,9 +21,9 @@ export default async function Home({ searchParams }: { searchParams : Promise<{q
       <SearchForm query={query}/>
     </section>
     {/* -------------------------Cards Section------------------------- */}
-    <section className="mt-12 mx-6 sm:mx-10">
-      <p className="font-semibold text-2xl">
-        { query ? `Results for "${query}"` : "Recommended startups" }
+    <section className="px-15 md:px-36 py-12">
+      <p className="font-semibold text-3xl">
+        { query ? `Results for "${query}"` : "All Startups" }
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 border mt-8">
        
@@ -50,5 +39,7 @@ export default async function Home({ searchParams }: { searchParams : Promise<{q
         
       </div>
     </section>
+
+    <SanityLive />
   </>); 
 }

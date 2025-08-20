@@ -5,7 +5,7 @@ export const author = defineType({
     name: "author",
     title: "Author",
     type: "document",
-    icons: UserIcon,
+    icon: UserIcon,
     fields: [
         defineField({
             name: "id",
@@ -34,7 +34,7 @@ export const author = defineType({
     ],
     preview: {
         select: {
-            title: "name"
+            title: "title"
         }
     }
 })

@@ -141,19 +141,3 @@ body {
   background-position: center;
   background-repeat: repeat-x;
 }
-
-.chlidBg{
-  background-color: pink;
-}
-.changeBg{
-
-
-  &:hover{
-    background-color: #FFE8F0;
-
-    & .chlidBg{
-      background-color: white;
-    }
-  }
-}
-/* hover:bg-[#FFE8F0] */

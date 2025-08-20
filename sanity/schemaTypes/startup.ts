@@ -5,7 +5,7 @@ export const startup = defineType({
     name: "startup",
     title: "Startup",
     type: "document",
-    icons: UserIcon,
+    icon: UserIcon,
     fields: [
         defineField({
             name: "title",
@@ -48,7 +48,7 @@ export const startup = defineType({
     ],
     preview: {
         select: {
-            title: "name"
+            title: "title"
         }
     }
 })
