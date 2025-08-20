@@ -141,3 +141,35 @@ body {
   background-position: center;
   background-repeat: repeat-x;
 }
+
+.header {
+  background-color: #EE2B69;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 3rem;   /* py-12 = 3rem */
+  padding-bottom: 3rem;
+  padding-left: 0.75rem;  /* px-3 = 0.75rem */
+  padding-right: 0.75rem;
+}
+.tag {
+  padding: 0.75rem;         /* p-3 */
+  background-color: #FBE843; /* bg-primary (use your theme variable or hex) */
+  color: black;             /* text-black */
+  font-size: 0.875rem;      /* text-sm */
+  font-weight: 700;         /* font-bold */
+  border-radius: 0.125rem;  /* rounded-sm */
+}
+.subHeading {
+
+  color: white;          /* text-white */
+  margin-top: 1.5rem;    /* my-6 → 1.5rem */
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;    /* px-4 → 1rem */
+  padding-right: 1rem;
+  text-align: center;    /* text-center */
+
+}
+

@@ -31,7 +31,7 @@ const StartupCard = ({post} : {post: StartupCardType}) => {
             </Link>
         </div>
         <Link href={`/startup/${post._id}`}>
-        <div className='text-gray-600 mb-4'>{(post.description)?.slice(10) + "...."}</div>
+        <div className='text-gray-600 mb-4'>{(post.description)?.slice(0,35) + "...."}</div>
         <img src={post.image} alt="WallE image" className='rounded-md w-full border' />
         </Link>
         <div className='flex justify-between items-center mt-4'>

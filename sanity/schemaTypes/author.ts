@@ -34,7 +34,7 @@ export const author = defineType({
     ],
     preview: {
         select: {
-            title: "title"
+            title: "name"
         }
     }
 })
