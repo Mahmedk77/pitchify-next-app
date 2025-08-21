@@ -17,7 +17,7 @@ export default async function Home({ searchParams }: { searchParams : Promise<{q
     <section className='bg-[#EE2B69] flex flex-col justify-center items-center w-full py-12 px-3 pattern'>
       <p className="tag">PITCH, VOTE, AND GROW</p>
       <Heading text1={"Pitch your startup,"} text2={"connect with entrepreneurs"}/>
-      <p className="text-white my-6 px-4 text-center sm:px-0">Submit Ideas, Vote on Pictches, and Get Noticed in Virtual Competitions </p>
+      <p className="text-white my-6 px-4 text-center !text-xl sm:px-0">Submit Ideas, Vote on Pictches, and Get Noticed in Virtual Competitions </p>
       <SearchForm query={query}/>
     </section>
     {/* -------------------------Cards Section------------------------- */}
