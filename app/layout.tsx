@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 import localFont from "next/font/local"
 import "./globals.css";
-import 'easymde/dist/easymde.min.css'
 
 
 
@@ -72,6 +72,7 @@ export default function RootLayout({
         className={`${workSans.variable} font-work-sans`}
       >
         {children}
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );
