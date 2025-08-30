@@ -35,7 +35,7 @@ const StartupForm = () => {
         console.log(result);
 
         if (result.status === "SUCCESS") {
-          toast.success("Your startup pitch has been created successfully");
+          toast.success("Your Startup Pitch has been Created Successfully");
           router.push(`/startup/${result._id}`);
 
           return result;

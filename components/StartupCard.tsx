@@ -9,7 +9,7 @@ export type StartupCardType = Omit<Startup, "author"> & { author?: Author }
 
 const StartupCard = ({post} : {post: StartupCardType}) => {
   return (
-    <div className='bg-white w-full flex flex-col gap-2 border-[5px] border-black border-r-[10px] border-b-[8px] py-4 px-5 rounded-[26px] shadow-200 hover:border-[#EE2B69] transition-all duration-500 hover:shadow-300 hover:bg-[#FFE8F0]'>
+    <div className='bg-white w-full flex flex-col gap-0 sm:gap-2 border-[5px] border-black border-r-[10px] border-b-[8px] py-4 px-5 rounded-[26px] shadow-200 hover:border-[#EE2B69] transition-all duration-500 hover:shadow-300 hover:bg-[#FFE8F0]'>
         <div className='flex justify-between items-center mb-2'>
             <p className='text-md'>{ formatDate(post._createdAt) }</p>
             <div className='flex gap-2'>
@@ -31,7 +31,7 @@ const StartupCard = ({post} : {post: StartupCardType}) => {
             </Link>
         </div>
         <Link href={`/startup/${post._id}`}>
-        <div className='text-gray-600 mb-4'>{(post.description)?.slice(0,35) + "...."}</div>
+        <div className='text-gray-600 my-1 sm:mb-4'>{(post.description)?.slice(0,35) + "...."}</div>
         
         <img src={post.image} alt="WallE image" className='rounded-md w-full h-50 border-2' />
         </Link>

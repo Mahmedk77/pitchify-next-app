@@ -17,6 +17,7 @@ const page = async ({ params }: { params: Promise<{ id: string }>}) => {
     const id = (await params).id;
     // console.log(id);
     const post =  await client.fetch(STARTUP_BY_ID_QUERY, { id });
+    
 
     // console.log("post", post)
     if (!post) return notFound();
@@ -39,7 +40,7 @@ const page = async ({ params }: { params: Promise<{ id: string }>}) => {
                 
                 <div className='flex justify-between items-center'>
                     <div className='flex gap-2'>
-                        <img src={`https://media.istockphoto.com/id/2151669184/vector/vector-flat-illustration-in-grayscale-avatar-user-profile-person-icon-gender-neutral.jpg?s=612x612&w=is&k=20&c=0nUqNCdx5lQnefamkMzDW5OD_8jMpsGVQdv7TOVL0UI=`} 
+                        <img src={post?.author?.image} 
                         alt="authors image" className='rounded-full w-18 h-18' />
                         {/* <img src={post?.author?.image} alt="authors image" className='rounded-full w-18 h-18' /> */}
                         

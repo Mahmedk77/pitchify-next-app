@@ -1,5 +1,5 @@
 import { auth, signIn, signOut } from '@/auth'
-import { BadgePlus, LogOut } from 'lucide-react';
+import { BadgePlus, CirclePlus, LogOut } from 'lucide-react';
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 const Navbar = async () => {
 
     const session = await auth();
-
+    
 
   return (
     <header className='py-3 px-5 bg-white shadow-sm font-work-sans'>
@@ -23,7 +23,7 @@ const Navbar = async () => {
                         <div className='flex justify-center items-center gap-6'>
                         <Link href={"/startup/create"}>
                             <span className='hidden sm:block'>Create</span>
-                            <BadgePlus className='sm:hidden size-6' color='red'/>
+                            <CirclePlus className='sm:hidden size-6' color='red'/>
                         </Link>
                         <form action={               
                             async () => {
@@ -32,10 +32,10 @@ const Navbar = async () => {
                             }}>
                             <button type='submit' className='cursor-pointer'>
                                 <span className='hidden sm:block'>Logout</span>
-                                <LogOut className='sm:hidden size-6' color='red'/>
+                                <LogOut className='sm:hidden size-6 mt-2' color='red'/>
                             </button>
                         </form>
-                        <Link href={`/user`}>
+                        <Link href={`/user/${session?.id}`}>
                             <Avatar className="size-10">
                                 <AvatarImage
                                     src={session?.user?.image || ""}

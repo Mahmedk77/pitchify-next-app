@@ -27,11 +27,11 @@ export default async function Home({ searchParams }: { searchParams : Promise<{q
       <SearchForm query={query}/>
     </section>
     {/* -------------------------Cards Section------------------------- */}
-    <section className="px-15 md:px-36 py-12">
+    <section className="px-4 xl:px-36 py-12">
       <p className="font-semibold text-3xl">
         { query ? `Results for "${query}"` : "All Startups" }
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 border mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-8">
        
          {
           posts?.length > 0 
