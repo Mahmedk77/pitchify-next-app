@@ -1,7 +1,9 @@
 import { auth, signIn, signOut } from '@/auth'
+import { BadgePlus, LogOut } from 'lucide-react';
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 const Navbar = async () => {
 
@@ -18,21 +20,31 @@ const Navbar = async () => {
                 {
                     session && session?.user 
                     ? ( 
-                        <>
+                        <div className='flex justify-center items-center gap-6'>
                         <Link href={"/startup/create"}>
-                            <span>Create</span>
+                            <span className='hidden sm:block'>Create</span>
+                            <BadgePlus className='sm:hidden size-6' color='red'/>
                         </Link>
                         <form action={               
                             async () => {
                             "use server";
                             await signOut({redirect: true, redirectTo: "/"}); //signOut({redirect: boolean, redirectTo: Url})
                             }}>
-                            <button type='submit' className='cursor-pointer'>Logout</button>
+                            <button type='submit' className='cursor-pointer'>
+                                <span className='hidden sm:block'>Logout</span>
+                                <LogOut className='sm:hidden size-6' color='red'/>
+                            </button>
                         </form>
                         <Link href={`/user`}>
-                            <span>{session?.user?.name}</span>
+                            <Avatar className="size-10">
+                                <AvatarImage
+                                    src={session?.user?.image || ""}
+                                    alt={session?.user?.name || ""}
+                                />
+                                <AvatarFallback>AV</AvatarFallback>
+                            </Avatar>
                         </Link>
-                        </>) 
+                        </div>) 
                     : (
                     <>
                     <form action={
