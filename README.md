@@ -1,7 +1,7 @@
 <div align="center">
-    
-<img src="/banner.png" alt="Project Banner" />
-    
+    <a>
+    <img src="./public/banner.png" alt="Project Banner" />
+    </a>
 
   <h1>🚀 Startup Directory Platform</h1>
   <p>A simple Next.js platform to submit, explore, and showcase startup ideas.</p>
