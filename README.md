@@ -1,4 +1,8 @@
 <div align="center">
+    
+<img src="/banner.png" alt="Project Banner" />
+    
+
   <h1>🚀 Startup Directory Platform</h1>
   <p>A simple Next.js platform to submit, explore, and showcase startup ideas.</p>
 
@@ -39,4 +43,27 @@
 
 ```bash
 git clone https://github.com/JavaScript-Mastery-Pro/pitchify.git
-cd pitchify
+cd pitchify 
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+Create a .env.local file in the project root:
+```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=
+NEXT_PUBLIC_SANITY_API_VERSION='vX'
+SANITY_TOKEN=
+
+AUTH_SECRET= 
+AUTH_GITHUB_ID=
+AUTH_GITHUB_SECRET=
+```
+### 4. Run the development server
+```bash
+npm run dev
+```
