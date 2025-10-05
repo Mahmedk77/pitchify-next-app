@@ -1,5 +1,5 @@
 <div align="center">
-    <a href="https://pitchify-next-app-lac.vercel.app" target="_blank">
+    <a href="https://pitchify-next-app-lac.vercel.app" >
     <img src="./public/banner.png" alt="Project Banner" />
     </a>
 
