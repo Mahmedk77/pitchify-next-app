@@ -8,6 +8,7 @@ import React, { Suspense } from 'react'
 import { Skeleton } from '@/components/ui/skeleton';
 import View from '@/components/View';
 import StartupCard, { StartupCardType } from '@/components/StartupCard';
+import Link from 'next/link';
 
 export const experimental_ppr = true;
 
@@ -45,8 +46,10 @@ const page = async ({ params }: { params: Promise<{ id: string }>}) => {
                 
                 <div className='flex justify-between items-center'>
                     <div className='flex gap-2'>
+                        <Link href={`/user/${post.author?._id}`} > 
                         <img src={post?.author?.image} 
                         alt="authors image" className='rounded-full w-18 h-18' />
+                        </Link>
                         {/* <img src={post?.author?.image} alt="authors image" className='rounded-full w-18 h-18' /> */}
                         
                         <div className='flex flex-col items-start justify-center'>
